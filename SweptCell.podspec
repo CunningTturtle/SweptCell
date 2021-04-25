@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SweptCell"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Custom sliding TableViewCell"
   s.homepage     = "https://github.com/CunningTturtle/SweptCell.git"
   s.license      = "MIT"
