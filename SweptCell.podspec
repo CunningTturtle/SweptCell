@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author       = { "scottzg" => "1342811501@qq.com" }
   s.source       = { :git => "https://github.com/CunningTturtle/SweptCell.git", :tag => "#{s.version}" }
-  s.source_files = "SweptCell/Cell/*.{swift}"
+  s.source_files = "SweptCell/**/*.{swift}"
   s.frameworks = "UIKit"
   s.ios.deployment_target = "9.0"
   s.platform = :ios,'9.0'
