@@ -10,4 +10,7 @@ Pod::Spec.new do |s|
   s.frameworks = "UIKit"
   s.ios.deployment_target = "9.0"
   s.platform = :ios,'9.0'
+  if s.respond_to? 'swift_version'
+    s.swift_version = "5.0"
+  end
 end
