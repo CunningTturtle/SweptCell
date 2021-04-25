@@ -15,6 +15,17 @@ extension UIView {
             subView.removeFromSuperview()
         }
     }
+    
+    func getSuperView<T>(viewType: T) -> UIView? {
+        
+        if ((superview?.superclass as? T) != nil) {
+            
+            return superview
+        } else {
+            
+            return superview?.superview?.getSuperView(viewType: viewType) ?? nil
+        }
+    }
 }
 
 protocol WLViewTools {

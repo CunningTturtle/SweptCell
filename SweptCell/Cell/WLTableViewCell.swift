@@ -48,7 +48,7 @@ class WLTableViewCell: UITableViewCell {
         }
         
         contentView.backgroundColor = .white
-        contentView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action:#selector(cancleSwept)))
+        contentView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action:#selector(contentViewTap)))
         scroll.addSubview(contentView)
         
         scroll.addSubview(itemBackView)
@@ -66,14 +66,18 @@ class WLTableViewCell: UITableViewCell {
         scroll.contentSize = CGSize.init(width: itemBackView.itemBackViewWidth + frame.size.width, height: frame.size.height)
     }
     
+    @objc func contentViewTap() {
+        cancleSwept()
+    }
     ///content被点击 发通知收起view
-    @objc func cancleSwept(finshBlock:((Bool) -> Void)? = nil) {
+    func cancleSwept(finshBlock: ((Bool) -> Void)?  = nil) {
         
-//        scroll.setContentOffset(CGPoint.init(x: 0, y: 0), animated: true)
         UIView.animate(withDuration: 0.3) {
             self.scroll.contentOffset.x = 0
         } completion: { (finsh) in
-            finshBlock?(finsh)
+            if finshBlock != nil {
+                finshBlock?(finsh)
+            }
         }
     }
 
