@@ -28,6 +28,6 @@ end
 
 
 
-  s.source_files = 'Source/*.swift'
+  s.source_files = 'Sources/*.swift'
 
   s.swift_version = '5.0'
