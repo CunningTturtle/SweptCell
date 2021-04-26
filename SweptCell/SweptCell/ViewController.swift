@@ -46,7 +46,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let itemView2 = WLRightItemView.init(width: 100) { (model) in
             model.itemType = .alert
         } tapClick: { (finsh) in
-            
+            finsh = true
         }
         itemView2.backgroundColor = .yellow
         return [itemView1,itemView2]

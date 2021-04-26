@@ -21,8 +21,10 @@ class WLRightItemView: UIView {
     fileprivate var fillWidth:CGFloat = 0
     fileprivate var didFinsh = false {
         didSet {
-            lookForSuperCellView()?.cancleSwept()
-            itemStats = .didClose
+            if didFinsh == true {
+                lookForSuperCellView()?.cancleSwept()
+                itemStats = .didClose
+            }
         }
     }
     init() {

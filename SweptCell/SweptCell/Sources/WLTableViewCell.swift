@@ -12,7 +12,7 @@ protocol WLTableViewCellDelegate: NSObjectProtocol {
     func willLeftSliding() -> [WLRightItemView]
 }
 
-class WLTableViewCell: UITableViewCell {
+open class WLTableViewCell: UITableViewCell {
     
     let scroll = WLScrollView()
     var itemBackView:WLRightItemBackView = WLRightItemBackView()
@@ -51,11 +51,11 @@ class WLTableViewCell: UITableViewCell {
         scroll.addSubview(itemBackView)
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
+    open override func layoutSubviews() {
         
         scroll.frame = bounds
         contentView.frame = bounds
