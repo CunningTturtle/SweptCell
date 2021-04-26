@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum WLItemViewStats {
+public enum WLItemViewStats {
     case didShow
     case showAlertUI
     case willClose
@@ -15,11 +15,11 @@ enum WLItemViewStats {
 }
 open class WLRightItemView: UIView {
     
-    fileprivate var itemModel = WLSweptItemModel()
-    fileprivate var tapBlock:((inout Bool)->Void)?
-    fileprivate var itemStats:WLItemViewStats = .didShow
-    fileprivate var fillWidth:CGFloat = 0
-    fileprivate var didFinsh = false {
+    open var itemModel = WLSweptItemModel()
+    open var tapBlock:((inout Bool)->Void)?
+    open var itemStats:WLItemViewStats = .didShow
+    open var fillWidth:CGFloat = 0
+    open var didFinsh = false {
         didSet {
             lookForSuperCellView()?.cancleSwept()
             itemStats = .didClose
