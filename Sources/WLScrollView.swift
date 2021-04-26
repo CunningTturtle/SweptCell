@@ -7,12 +7,12 @@
 
 import UIKit
 
-class WLScrollView: UIScrollView,UIScrollViewDelegate {
+open class WLScrollView: UIScrollView,UIScrollViewDelegate {
     
-    var uploadRightView:(()->Void)?
-    var slideStop:(()->Void)?
+    public var uploadRightView:(()->Void)?
+    public var slideStop:(()->Void)?
     ///是否正在滚动
-    var isScrollIng = false
+    public var isScrollIng = false
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,7 +25,7 @@ class WLScrollView: UIScrollView,UIScrollViewDelegate {
     }
     
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -40,7 +40,7 @@ class WLScrollView: UIScrollView,UIScrollViewDelegate {
 extension WLScrollView {
     
     ///正在滑动
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let point = panGestureRecognizer.translation(in: self)
         //控制滑动方向
@@ -52,12 +52,12 @@ extension WLScrollView {
         isScrollIng = true
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         scrollViewCorrection()
     }
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         
         if !decelerate {
             scrollViewCorrection()
@@ -65,7 +65,7 @@ extension WLScrollView {
     }
     
     ///滑动停止
-    func scrollViewCorrection() {
+    public func scrollViewCorrection() {
         
         isScrollIng = false
         slideStop?()

@@ -13,14 +13,12 @@ public protocol WLTableViewCellDelegate: NSObjectProtocol {
 }
 
 
-let cancelNoticName = "cancleCellSwept"
-
 open class WLTableViewCell: UITableViewCell {
     
-    let scroll = WLScrollView()
-    var itemBackView:WLRightItemBackView = WLRightItemBackView()
+    public let scroll = WLScrollView()
+    open var itemBackView:WLRightItemBackView = WLRightItemBackView()
     
-    public weak var delegate:WLTableViewCellDelegate? {
+    open weak var delegate:WLTableViewCellDelegate? {
         didSet {
             //添加view
             let viewArr = delegate?.willLeftSliding() ?? []
@@ -66,11 +64,11 @@ open class WLTableViewCell: UITableViewCell {
         scroll.contentSize = CGSize.init(width: itemBackView.itemBackViewWidth + frame.size.width, height: frame.size.height)
     }
     
-    @objc func contentViewTap() {
+    @objc open func contentViewTap() {
         cancleSwept()
     }
     ///content被点击 发通知收起view
-    func cancleSwept(finshBlock: ((Bool) -> Void)?  = nil) {
+    open func cancleSwept(finshBlock: ((Bool) -> Void)?  = nil) {
         
         UIView.animate(withDuration: 0.3) {
             self.scroll.contentOffset.x = 0
