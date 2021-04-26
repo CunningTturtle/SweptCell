@@ -7,16 +7,13 @@
 
 import UIKit
 
-
-public protocol WLTableViewCellDelegate: NSObjectProtocol {
+protocol WLTableViewCellDelegate: NSObjectProtocol {
     func willLeftSliding() -> [WLRightItemView]
 }
-
-
-open class WLTableViewCell: UITableViewCell {
+ class WLTableViewCell: UITableViewCell {
     
-    public let scroll = WLScrollView()
-    open var itemBackView:WLRightItemBackView = WLRightItemBackView()
+    let scroll = WLScrollView()
+    private var itemBackView:WLRightItemBackView = WLRightItemBackView()
     
     open weak var delegate:WLTableViewCellDelegate? {
         didSet {
@@ -27,7 +24,7 @@ open class WLTableViewCell: UITableViewCell {
         }
     }
     
-    override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         addSubview(scroll)
@@ -52,11 +49,11 @@ open class WLTableViewCell: UITableViewCell {
         scroll.addSubview(itemBackView)
     }
     
-    required public init?(coder: NSCoder) {
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    open override func layoutSubviews() {
+    override func layoutSubviews() {
         
         scroll.frame = bounds
         contentView.frame = bounds
@@ -64,11 +61,11 @@ open class WLTableViewCell: UITableViewCell {
         scroll.contentSize = CGSize.init(width: itemBackView.itemBackViewWidth + frame.size.width, height: frame.size.height)
     }
     
-    @objc open func contentViewTap() {
+    @objc func contentViewTap() {
         cancleSwept()
     }
     ///content被点击 发通知收起view
-    open func cancleSwept(finshBlock: ((Bool) -> Void)?  = nil) {
+    func cancleSwept(finshBlock: ((Bool) -> Void)?  = nil) {
         
         UIView.animate(withDuration: 0.3) {
             self.scroll.contentOffset.x = 0

@@ -7,11 +7,11 @@
 
 import UIKit
 
-open class WLRightItemBackView: UIView,WLViewTools {
+class WLRightItemBackView: UIView,WLViewTools {
 
-    public var itemViewArr:[WLRightItemView] = []
-    public var itemBackViewWidth:CGFloat = 0
-    public var rateArr:[CGFloat] = []
+    var itemViewArr:[WLRightItemView] = []
+    var itemBackViewWidth:CGFloat = 0
+    private var rateArr:[CGFloat] = []
     
     override public init(frame: CGRect) {
         super.init(frame: frame)

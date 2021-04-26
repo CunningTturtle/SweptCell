@@ -6,30 +6,30 @@
 //
 
 import UIKit
-
-open class WLScrollView: UIScrollView,UIScrollViewDelegate {
+ 
+class WLScrollView: UIScrollView,UIScrollViewDelegate {
     
-    public var uploadRightView:(()->Void)?
-    public var slideStop:(()->Void)?
+    var uploadRightView:(()->Void)?
+    var slideStop:(()->Void)?
     ///是否正在滚动
-    public var isScrollIng = false
+    var isScrollIng = false
 
-    override public init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         self.configSet()
     }
     
-    public init() {
+    init() {
         super.init(frame: CGRect.zero)
         self.configSet()
     }
     
     
-    required public init?(coder: NSCoder) {
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func configSet() {
+    func configSet() {
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator   = false
         backgroundColor = .red
@@ -40,7 +40,7 @@ open class WLScrollView: UIScrollView,UIScrollViewDelegate {
 extension WLScrollView {
     
     ///正在滑动
-    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let point = panGestureRecognizer.translation(in: self)
         //控制滑动方向
@@ -52,12 +52,12 @@ extension WLScrollView {
         isScrollIng = true
     }
     
-    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         scrollViewCorrection()
     }
     
-    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         
         if !decelerate {
             scrollViewCorrection()
@@ -65,7 +65,7 @@ extension WLScrollView {
     }
     
     ///滑动停止
-    public func scrollViewCorrection() {
+    func scrollViewCorrection() {
         
         isScrollIng = false
         slideStop?()

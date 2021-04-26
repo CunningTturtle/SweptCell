@@ -7,35 +7,35 @@
 
 import UIKit
 
-public enum WLItemViewStats {
+enum WLItemViewStats {
     case didShow
     case showAlertUI
     case willClose
     case didClose
 }
-open class WLRightItemView: UIView {
+class WLRightItemView: UIView {
     
-    open var itemModel = WLSweptItemModel()
-    open var tapBlock:((inout Bool)->Void)?
-    open var itemStats:WLItemViewStats = .didShow
-    open var fillWidth:CGFloat = 0
-    open var didFinsh = false {
+    var itemModel = WLSweptItemModel()
+    var tapBlock:((inout Bool)->Void)?
+    var itemStats:WLItemViewStats = .didShow
+    var fillWidth:CGFloat = 0
+    var didFinsh = false {
         didSet {
             lookForSuperCellView()?.cancleSwept()
             itemStats = .didClose
         }
     }
-    public init() {
+    init() {
         super.init(frame: CGRect.zero)
         configUI()
     }
     
-    public override init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         configUI()
     }
     
-    public init(width:CGFloat,model:((WLSweptItemModel) -> Void),tapClick:@escaping ((inout Bool)->Void)) {
+    init(width:CGFloat,model:((WLSweptItemModel) -> Void),tapClick:@escaping ((inout Bool)->Void)) {
         super.init(frame: CGRect.zero)
         
         fillWidth = width
@@ -46,11 +46,11 @@ open class WLRightItemView: UIView {
         configUI()
     }
     
-    public func configUI() {
+    func configUI() {
         addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(viewTap)))
     }
     
-    public override func layoutSubviews() {
+    override func layoutSubviews() {
         
         if frame.size.width <= 0 {
             itemStats = .didClose
@@ -59,11 +59,11 @@ open class WLRightItemView: UIView {
         }
     }
     
-    required public init?(coder: NSCoder) {
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    @objc public func viewTap() {
+    @objc func viewTap() {
         
         switch itemModel.itemType {
         
@@ -96,7 +96,7 @@ open class WLRightItemView: UIView {
 
 
     
-    public func lookForSuperCellView() -> SweptCell? {
+    func lookForSuperCellView() -> SweptCell? {
         if let view = getSuperView(viewType:UITableViewCell.self) as? SweptCell  {
             return view
         } else {
