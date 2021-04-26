@@ -25,12 +25,12 @@ public class WLRightItemView: UIView {
             itemStats = .didClose
         }
     }
-    init() {
+    public init() {
         super.init(frame: CGRect.zero)
         configUI()
     }
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         configUI()
     }
