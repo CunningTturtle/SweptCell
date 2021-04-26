@@ -7,5 +7,5 @@
 
 import UIKit
 
-class SweptCell: WLTableViewCell {
+public class SweptCell: WLTableViewCell {
 }

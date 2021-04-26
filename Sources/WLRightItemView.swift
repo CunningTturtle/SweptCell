@@ -13,7 +13,7 @@ enum WLItemViewStats {
     case willClose
     case didClose
 }
-class WLRightItemView: UIView {
+public class WLRightItemView: UIView {
     
     fileprivate var itemModel = WLSweptItemModel()
     fileprivate var tapBlock:((inout Bool)->Void)?
