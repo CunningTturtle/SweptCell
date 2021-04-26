@@ -9,9 +9,9 @@ import UIKit
 
 open class WLRightItemBackView: UIView,WLViewTools {
 
-    var itemViewArr:[WLRightItemView] = []
-    var itemBackViewWidth:CGFloat = 0
-    fileprivate var rateArr:[CGFloat] = []
+    public var itemViewArr:[WLRightItemView] = []
+    public var itemBackViewWidth:CGFloat = 0
+    public var rateArr:[CGFloat] = []
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,7 +22,7 @@ open class WLRightItemBackView: UIView,WLViewTools {
     }
     
     
-    func addItemView(viewArr:[WLRightItemView]) {
+    public func addItemView(viewArr:[WLRightItemView]) {
         
         itemViewArr = viewArr
         rateCreat()
@@ -33,7 +33,7 @@ open class WLRightItemBackView: UIView,WLViewTools {
         }
     }
     
-    func uploadItemViewFrame(){
+    public func uploadItemViewFrame(){
         
         var right:CGFloat = 0
         
@@ -46,7 +46,7 @@ open class WLRightItemBackView: UIView,WLViewTools {
         }
     }
     
-    func rateCreat() {
+    public func rateCreat() {
         
         rateArr.removeAll()
         itemBackViewWidth = viewsWidth(viewArr: itemViewArr)

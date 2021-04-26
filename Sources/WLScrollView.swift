@@ -14,12 +14,12 @@ open class WLScrollView: UIScrollView,UIScrollViewDelegate {
     ///是否正在滚动
     public var isScrollIng = false
 
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         self.configSet()
     }
     
-    init() {
+    public init() {
         super.init(frame: CGRect.zero)
         self.configSet()
     }
@@ -29,7 +29,7 @@ open class WLScrollView: UIScrollView,UIScrollViewDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configSet() {
+    public func configSet() {
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator   = false
         backgroundColor = .red
