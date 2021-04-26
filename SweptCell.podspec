@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SweptCell"
-  s.version      = "1.0.3"
+  s.version      = "1.0.4"
   s.summary      = "Custom sliding TableViewCell"
   s.homepage     = "https://cocoapods.org/pods/SweptCell"
   s.license      = "MIT"
