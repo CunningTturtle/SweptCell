@@ -50,7 +50,7 @@ public class WLRightItemView: UIView {
         addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(viewTap)))
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         
         if frame.size.width <= 0 {
             itemStats = .didClose

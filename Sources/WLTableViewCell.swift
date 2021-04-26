@@ -15,7 +15,7 @@ protocol WLTableViewCellDelegate: NSObjectProtocol {
 
 let cancelNoticName = "cancleCellSwept"
 
-class WLTableViewCell: UITableViewCell {
+public class WLTableViewCell: UITableViewCell {
     
     let scroll = WLScrollView()
     var itemBackView:WLRightItemBackView = WLRightItemBackView()
@@ -58,7 +58,7 @@ class WLTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         
         scroll.frame = bounds
         contentView.frame = bounds
