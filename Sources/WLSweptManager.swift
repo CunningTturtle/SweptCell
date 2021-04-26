@@ -12,7 +12,7 @@ public enum WLSweptItemType {
     case nomal
     case alert
 }
-open class WLSweptItemModel: NSObject {
+class WLSweptItemModel: NSObject {
     var itemType:WLSweptItemType = .nomal
 
     override init() {

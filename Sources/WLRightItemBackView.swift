@@ -13,16 +13,16 @@ class WLRightItemBackView: UIView,WLViewTools {
     var itemBackViewWidth:CGFloat = 0
     private var rateArr:[CGFloat] = []
     
-    override public init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
-    required public init?(coder: NSCoder) {
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     
-    public func addItemView(viewArr:[WLRightItemView]) {
+    func addItemView(viewArr:[WLRightItemView]) {
         
         itemViewArr = viewArr
         rateCreat()
@@ -33,7 +33,7 @@ class WLRightItemBackView: UIView,WLViewTools {
         }
     }
     
-    public func uploadItemViewFrame(){
+    func uploadItemViewFrame(){
         
         var right:CGFloat = 0
         
@@ -46,7 +46,7 @@ class WLRightItemBackView: UIView,WLViewTools {
         }
     }
     
-    public func rateCreat() {
+    func rateCreat() {
         
         rateArr.removeAll()
         itemBackViewWidth = viewsWidth(viewArr: itemViewArr)
