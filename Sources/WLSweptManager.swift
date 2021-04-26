@@ -7,15 +7,12 @@
 
 import UIKit
 
-class WLSweptManager: NSObject {
-
-}
 
 public enum WLSweptItemType {
     case nomal
     case alert
 }
-public class WLSweptItemModel: NSObject {
+open class WLSweptItemModel: NSObject {
     var itemType:WLSweptItemType = .nomal
 
     override init() {

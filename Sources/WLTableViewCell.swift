@@ -8,7 +8,7 @@
 import UIKit
 
 
-protocol WLTableViewCellDelegate: NSObjectProtocol {
+public protocol WLTableViewCellDelegate: NSObjectProtocol {
     func willLeftSliding() -> [WLRightItemView]
 }
 
@@ -20,7 +20,7 @@ open class WLTableViewCell: UITableViewCell {
     let scroll = WLScrollView()
     var itemBackView:WLRightItemBackView = WLRightItemBackView()
     
-    weak var delegate:WLTableViewCellDelegate? {
+    public weak var delegate:WLTableViewCellDelegate? {
         didSet {
             //添加view
             let viewArr = delegate?.willLeftSliding() ?? []
