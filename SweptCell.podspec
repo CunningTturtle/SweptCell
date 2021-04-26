@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://cocoapods.org/pods/SweptCell"
   s.author       = { "scottzg" => "1342811501@qq.com" }
   s.source       = { :git => "https://github.com/CunningTturtle/SweptCell.git", :tag => s.version }
-  s.source_files =  'Sources/*.swift'
+  s.source_files =  'SweptCell/SweptCell/Sources/*.swift'
   s.frameworks = "UIKit"
   s.ios.deployment_target = "9.0"
   s.platform = :ios,'9.0'
@@ -24,4 +24,5 @@ Pod::Spec.new do |s|
     limitations under the License.
     LICENSE
   }
+   s.frameworks = "UIKit", "Foundation" # 支持的框架
 end
