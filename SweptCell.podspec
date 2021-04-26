@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary      = "Custom sliding TableViewCell"
   s.homepage     = "https://cocoapods.org/pods/SweptCell"
   s.author       = { "scottzg" => "1342811501@qq.com" }
-  s.source       = { :git => "https://github.com/CunningTturtle/SweptCell.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/CunningTturtle/SweptCell", :tag => s.version }
   s.source_files =  'Sources/*.swift'
   s.frameworks = "UIKit"
   s.ios.deployment_target = "9.0"
