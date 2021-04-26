@@ -13,7 +13,7 @@ enum WLItemViewStats {
     case willClose
     case didClose
 }
-public class WLRightItemView: UIView {
+open class WLRightItemView: UIView {
     
     fileprivate var itemModel = WLSweptItemModel()
     fileprivate var tapBlock:((inout Bool)->Void)?
@@ -59,7 +59,7 @@ public class WLRightItemView: UIView {
         }
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
