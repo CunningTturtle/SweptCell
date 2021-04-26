@@ -28,7 +28,7 @@ import PackageDescription
 let package = Package(
     name: "SweptCell",
     platforms: [
-        .iOS(.v10)
+        .iOS(.v9)
     ],
     products: [
         .library(name: "SweptCell", targets: ["SweptCell"]),
