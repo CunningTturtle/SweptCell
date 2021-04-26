@@ -13,7 +13,7 @@ enum WLItemViewStats {
     case willClose
     case didClose
 }
-class WLRightItemView: UIView {
+public class WLRightItemView: UIView {
     
     fileprivate var itemModel = WLSweptItemModel()
     fileprivate var tapBlock:((inout Bool)->Void)?
@@ -52,7 +52,7 @@ class WLRightItemView: UIView {
         addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(viewTap)))
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         
         if frame.size.width <= 0 {
             itemStats = .didClose
