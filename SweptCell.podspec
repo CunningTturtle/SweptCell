@@ -24,10 +24,4 @@ Pod::Spec.new do |s|
     limitations under the License.
     LICENSE
   }
-
-    s.subspec "Crash" do |crash|
-    
-        crash.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
-        crash.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
-    end
 end
