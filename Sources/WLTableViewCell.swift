@@ -12,9 +12,6 @@ protocol WLTableViewCellDelegate: NSObjectProtocol {
     func willLeftSliding() -> [WLRightItemView]
 }
 
-
-let cancelNoticName = "cancleCellSwept"
-
 class WLTableViewCell: UITableViewCell {
     
     let scroll = WLScrollView()
