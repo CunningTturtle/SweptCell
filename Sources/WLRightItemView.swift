@@ -35,7 +35,7 @@ public class WLRightItemView: UIView {
         configUI()
     }
     
-    init(width:CGFloat,model:((WLSweptItemModel) -> Void),tapClick:@escaping ((inout Bool)->Void)) {
+    public init(width:CGFloat,model:((WLSweptItemModel) -> Void),tapClick:@escaping ((inout Bool)->Void)) {
         super.init(frame: CGRect.zero)
         
         fillWidth = width
