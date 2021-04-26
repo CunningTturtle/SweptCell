@@ -46,7 +46,7 @@ open class WLRightItemView: UIView {
         configUI()
     }
     
-    func configUI() {
+    public func configUI() {
         addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(viewTap)))
     }
     
@@ -63,7 +63,7 @@ open class WLRightItemView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    @objc func viewTap() {
+    @objc public func viewTap() {
         
         switch itemModel.itemType {
         
@@ -96,7 +96,7 @@ open class WLRightItemView: UIView {
 
 
     
-    func lookForSuperCellView() -> SweptCell? {
+    public func lookForSuperCellView() -> SweptCell? {
         if let view = getSuperView(viewType:UITableViewCell.self) as? SweptCell  {
             return view
         } else {
