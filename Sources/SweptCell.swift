@@ -6,9 +6,6 @@
 //
 
 import UIKit
-class SweptCell: WLTableViewCell {
-}
 
-open class MyCell: UITableViewCell {
-    
+class SweptCell: WLTableViewCell {
 }

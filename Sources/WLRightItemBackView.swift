@@ -11,7 +11,7 @@ class WLRightItemBackView: UIView,WLViewTools {
 
     var itemViewArr:[WLRightItemView] = []
     var itemBackViewWidth:CGFloat = 0
-    private var rateArr:[CGFloat] = []
+    fileprivate var rateArr:[CGFloat] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)

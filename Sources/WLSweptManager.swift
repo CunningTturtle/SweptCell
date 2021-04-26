@@ -7,8 +7,11 @@
 
 import UIKit
 
+class WLSweptManager: NSObject {
 
-public enum WLSweptItemType {
+}
+
+enum WLSweptItemType {
     case nomal
     case alert
 }

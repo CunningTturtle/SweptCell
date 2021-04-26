@@ -7,15 +7,20 @@
 
 import UIKit
 
+
 protocol WLTableViewCellDelegate: NSObjectProtocol {
     func willLeftSliding() -> [WLRightItemView]
 }
- class WLTableViewCell: UITableViewCell {
+
+
+let cancelNoticName = "cancleCellSwept"
+
+class WLTableViewCell: UITableViewCell {
     
     let scroll = WLScrollView()
-    private var itemBackView:WLRightItemBackView = WLRightItemBackView()
+    var itemBackView:WLRightItemBackView = WLRightItemBackView()
     
-    open weak var delegate:WLTableViewCellDelegate? {
+    weak var delegate:WLTableViewCellDelegate? {
         didSet {
             //添加view
             let viewArr = delegate?.willLeftSliding() ?? []

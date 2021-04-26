@@ -15,11 +15,11 @@ enum WLItemViewStats {
 }
 class WLRightItemView: UIView {
     
-    var itemModel = WLSweptItemModel()
-    var tapBlock:((inout Bool)->Void)?
-    var itemStats:WLItemViewStats = .didShow
-    var fillWidth:CGFloat = 0
-    var didFinsh = false {
+    fileprivate var itemModel = WLSweptItemModel()
+    fileprivate var tapBlock:((inout Bool)->Void)?
+    fileprivate var itemStats:WLItemViewStats = .didShow
+    fileprivate var fillWidth:CGFloat = 0
+    fileprivate var didFinsh = false {
         didSet {
             lookForSuperCellView()?.cancleSwept()
             itemStats = .didClose

@@ -6,7 +6,7 @@
 //
 
 import UIKit
- 
+
 class WLScrollView: UIScrollView,UIScrollViewDelegate {
     
     var uploadRightView:(()->Void)?
