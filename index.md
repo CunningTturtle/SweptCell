@@ -1,37 +1,42 @@
-## Welcome to GitHub Pages
+# SweptCell
+SweptCell 一款swift版本的tableViewCell的侧滑删除的控件 有两种侧滑模式 第一种是普通的侧滑 第二种是带有提醒模式的侧滑
 
-You can use the [editor on GitHub](https://github.com/CunningTturtle/SweptCell/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Requirements
+- Swift 5.0+
+## Usage
+```swift
+import SnapKit
+1 继承 TableCell
+2 遵守WLTableViewCellDelegate协议
+3 实现 func willLeftSliding() -> [WLSweptItemModel] 方法
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+func willLeftSliding() -> [WLSweptItemModel] {
+    //普通侧滑
+    let model = WLSweptItemModel.init()
+    model.willClose = { canClose in
+        //当任务结束后 将该值赋值为true 即可关闭 侧滑
+        canClose = true
+    }
+    model.contentView.backgroundColor = .red
 
-### Markdown
+    //带有提醒模式的侧滑
+    let modelAlert = WLSweptItemModel.init()
+    modelAlert.itemType = .alert
+    //与父视图之间的绑定建议用约束绑定
+    modelAlert.contentView.addSubview(contentView())
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+    modelAlert.willClose = { canClose in
+        //当任务结束后 将该值赋值为true 即可关闭 侧滑
+        canClose = true
+    }
+    modelAlert.willAlert = { manager in
+        //在此处可以修改第二阶段的要展示的UI
+        if let subView = manager.subviews.first as? UILabel {
+            subView.text = "333"
+        }
+    }
+    modelAlert.contentView.backgroundColor = .yellow
+    return [model,modelAlert]
+}
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/CunningTturtle/SweptCell/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
