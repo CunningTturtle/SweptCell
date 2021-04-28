@@ -72,7 +72,7 @@
 		84160DA32636A95500BFA21E /* SweptCell */ = {
 			isa = PBXGroup;
 			children = (
-				84C3450D26392F49003B734A /* Sources 1.1 */,
+				84C3450D26392F49003B734A /* Sources */,
 				84160DA62636A95500BFA21E /* SceneDelegate.swift */,
 				84160DA42636A95500BFA21E /* AppDelegate.swift */,
 				84160DA82636A95500BFA21E /* ViewController.swift */,
@@ -84,7 +84,7 @@
 			path = SweptCell;
 			sourceTree = "<group>";
 		};
-		84C3450D26392F49003B734A /* Sources 1.1 */ = {
+		84C3450D26392F49003B734A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				84C3452326395740003B734A /* UIVIew+Tools.swift */,
@@ -96,7 +96,7 @@
 				84C3451226393173003B734A /* WLScrollerView.swift */,
 				84C3451026392FCD003B734A /* WLProtocol.swift */,
 			);
-			path = "Sources 1.1";
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
