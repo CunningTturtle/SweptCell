@@ -11,12 +11,12 @@ class WLSweptManager: NSObject {
 
 }
 
-enum WLSweptItemType {
+public enum WLSweptItemType {
     case nomal
     case alert
 }
 public class WLSweptItemModel: NSObject {
-    var itemType:WLSweptItemType = .nomal
+    public var itemType:WLSweptItemType = .nomal
 
     override init() {
         super.init()

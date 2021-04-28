@@ -21,7 +21,6 @@
 		84160DC92636AA2D00BFA21E /* WLRightItemBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84160DC12636AA2D00BFA21E /* WLRightItemBackView.swift */; };
 		84160DCA2636AA2D00BFA21E /* WLSweptManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84160DC22636AA2D00BFA21E /* WLSweptManager.swift */; };
 		84160DCB2636AA2D00BFA21E /* WLTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84160DC32636AA2D00BFA21E /* WLTableViewCell.swift */; };
-		84160DDE2636ACD100BFA21E /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84160DDD2636ACD100BFA21E /* TestTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +40,6 @@
 		84160DC12636AA2D00BFA21E /* WLRightItemBackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLRightItemBackView.swift; sourceTree = "<group>"; };
 		84160DC22636AA2D00BFA21E /* WLSweptManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLSweptManager.swift; sourceTree = "<group>"; };
 		84160DC32636AA2D00BFA21E /* WLTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLTableViewCell.swift; sourceTree = "<group>"; };
-		84160DDD2636ACD100BFA21E /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +95,6 @@
 				84160DC12636AA2D00BFA21E /* WLRightItemBackView.swift */,
 				84160DC22636AA2D00BFA21E /* WLSweptManager.swift */,
 				84160DC32636AA2D00BFA21E /* WLTableViewCell.swift */,
-				84160DDD2636ACD100BFA21E /* TestTableViewCell.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -177,7 +174,6 @@
 				84160DCA2636AA2D00BFA21E /* WLSweptManager.swift in Sources */,
 				84160DC72636AA2D00BFA21E /* WLScrollView.swift in Sources */,
 				84160DC82636AA2D00BFA21E /* WLRightItemView.swift in Sources */,
-				84160DDE2636ACD100BFA21E /* TestTableViewCell.swift in Sources */,
 				84160DC42636AA2D00BFA21E /* WLSweptManage.swift in Sources */,
 				84160DC92636AA2D00BFA21E /* WLRightItemBackView.swift in Sources */,
 				84160DA52636A95500BFA21E /* AppDelegate.swift in Sources */,
