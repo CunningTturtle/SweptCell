@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "SweptCell"
-  s.version      = "1.0.16"
-  s.summary      = "Custom sliding TableViewCell"
+  s.version      = "1.1.0"
+  s.summary      = "Custom sliding TableViewCell 自定义侧滑删除"
   s.homepage     = "https://cocoapods.org/pods/SweptCell"
   s.author       = { "scottzg" => "1342811501@qq.com" }
   s.source       = { :git => "https://github.com/CunningTturtle/SweptCell.git", :tag => s.version }
