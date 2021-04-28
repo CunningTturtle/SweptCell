@@ -29,31 +29,46 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell") as! TableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell")
+            as! TableCell
         cell.delegate = self
         return cell
     }
 
-    func willLeftSliding() -> [WLRightItemView] {
-        let itemView1 = WLRightItemView.init(width: 100) { (model) in
-            model.itemType = .nomal
-        } tapClick: { (finsh) in
-            finsh = true
+    func willLeftSliding() -> [WLSweptItemModel] {
+        let model = WLSweptItemModel.init()
+        model.willClose = { canClose in
+            canClose = true
         }
-        itemView1.backgroundColor = .red
-        
-        
-        let itemView2 = WLRightItemView.init(width: 100) { (model) in
-            model.itemType = .alert
-        } tapClick: { (finsh) in
-            finsh = true
+        model.contentView.backgroundColor = .red
+
+        let model1 = WLSweptItemModel.init()
+        model1.itemType = .alert
+        model1.contentView.addSubview(contentView())
+
+        model1.willClose = { canClose in
+            canClose = true
         }
-        itemView2.backgroundColor = .yellow
-        return [itemView1,itemView2]
+        model1.willAlert = { manager in
+            if let subView = manager.subviews.first as? UILabel {
+                subView.text = "333"
+            }
+        }
+        model1.contentView.backgroundColor = .yellow
+        return [model,model1]
+    }
+
+    func contentView() -> UIView {
+        let label = UILabel.init()
+        label.frame = CGRect.init(x: 0, y: 0, width: 40, height: 30)
+        label.text = "222"
+        label.textAlignment = .center
+        label.textColor = .black
+        return label
     }
 }
 
-class TableCell: SweptCell {
+class TableCell: WLTableViewCell {
 
 }
 

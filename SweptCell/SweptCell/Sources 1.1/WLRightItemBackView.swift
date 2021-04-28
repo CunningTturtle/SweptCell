@@ -7,9 +7,9 @@
 
 import UIKit
 
-class WLRightItemBackView: UIView,WLViewTools {
+class WLRightItemBackView: UIView {
 
-    var itemViewArr:[WLRightItemView] = []
+    var modelArr:[WLSweptItemModel] = []
     var itemBackViewWidth:CGFloat = 0
     fileprivate var rateArr:[CGFloat] = []
     
@@ -21,25 +21,24 @@ class WLRightItemBackView: UIView,WLViewTools {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    func addItemView(viewArr:[WLRightItemView]) {
+    func addItemView(models:[WLSweptItemModel]) {
         
-        itemViewArr = viewArr
-        rateCreat()
         removeSubView()
-        
-        for itemView in itemViewArr {
-            addSubview(itemView)
+        modelArr = models
+        rateCreat()
+        for model in modelArr {
+            addSubview(model.contentView)
         }
+        uploadItemViewFrame()
     }
     
     func uploadItemViewFrame(){
         
         var right:CGFloat = 0
         
-        for idx in 0..<itemViewArr.count {
+        for idx in 0..<modelArr.count {
             
-            let itemView = itemViewArr[idx]
+            let itemView = modelArr[idx].contentView
             itemView.frame = CGRect.init(x: right, y: 0, width: frame.size.width * rateArr[idx], height: frame.size.height)
             
             right += itemView.frame.size.width
@@ -49,10 +48,20 @@ class WLRightItemBackView: UIView,WLViewTools {
     func rateCreat() {
         
         rateArr.removeAll()
-        itemBackViewWidth = viewsWidth(viewArr: itemViewArr)
+        itemBackViewWidth = viewsWidth(models: modelArr)
 
-        for itemView in itemViewArr {
-            rateArr.append(itemView.frame.size.width / itemBackViewWidth)
+        for model in modelArr {
+            rateArr.append(model.contentView.frame.size.width / itemBackViewWidth)
         }
+    }
+    
+    func viewsWidth(models: [WLSweptItemModel]) -> CGFloat {
+        
+        var viewWidth:CGFloat = 0
+        
+        for model in models {
+            viewWidth += model.contentView.frame.size.width
+        }
+        return viewWidth
     }
 }

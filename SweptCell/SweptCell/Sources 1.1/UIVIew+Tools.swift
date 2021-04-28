@@ -10,6 +10,7 @@ import UIKit
 
 
 extension UIView {
+    
     func removeSubView() {
         for subView in subviews {
             subView.removeFromSuperview()
@@ -25,21 +26,5 @@ extension UIView {
             
             return superview?.superview?.getSuperView(viewType: viewType) ?? nil
         }
-    }
-}
-
-protocol WLViewTools {
-    func viewsWidth(viewArr: [WLRightItemView]) -> CGFloat
-}
-
-extension WLViewTools {
-    func viewsWidth(viewArr: [WLRightItemView]) -> CGFloat {
-        
-        var viewWidth:CGFloat = 0
-        
-        for itemView in viewArr {
-            viewWidth += itemView.frame.size.width
-        }
-        return viewWidth
     }
 }
