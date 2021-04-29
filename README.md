@@ -6,7 +6,7 @@ SweptCell 一款swift版本的tableViewCell的侧滑删除的控件 有两种侧
 ## Usage
 ```swift
 
-pod 'SweptCell'
+pod 'SweptCell', :git => 'https://github.com/CunningTturtle/SweptCell.git'
 
 import SweptCell
 
