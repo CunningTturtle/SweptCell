@@ -7,6 +7,7 @@ SweptCell 一款swift版本的tableViewCell的侧滑删除的控件 有两种侧
 ```swift
 
 pod 'SweptCell'
+
 import SweptCell
 
 1 继承 WLTableViewCell
