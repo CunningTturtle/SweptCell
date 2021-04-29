@@ -10,16 +10,21 @@ import SweptCell
 2 遵守WLTableViewCellDelegate协议
 3 实现 func willLeftSliding() -> [WLSweptItemModel] 方法
 
+//普通侧滑 这里可以返回值是一个数组可以返回多个item
 func willLeftSliding() -> [WLSweptItemModel] {
-    //普通侧滑
+    
     let model = WLSweptItemModel.init()
     model.willClose = { canClose in
         //当任务结束后 将该值赋值为true 即可关闭 侧滑
         canClose = true
     }
     model.contentView.backgroundColor = .red
+    return [model]
+}
 
-    //带有提醒模式的侧滑
+//带有提醒模式的侧滑 这里可以返回值是一个数组可以返回多个item
+func willLeftSliding() -> [WLSweptItemModel] {
+
     let modelAlert = WLSweptItemModel.init()
     modelAlert.itemType = .alert
     //与父视图之间的绑定建议用约束绑定
@@ -36,7 +41,9 @@ func willLeftSliding() -> [WLSweptItemModel] {
         }
     }
     modelAlert.contentView.backgroundColor = .yellow
-    return [model,modelAlert]
+
+    return [modelAlert]
 }
+    
 
 ```
