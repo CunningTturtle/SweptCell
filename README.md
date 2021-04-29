@@ -14,7 +14,8 @@ import SweptCell
     }
 
 2 遵守WLTableViewCellDelegate协议
-
+     class ViewController: UIViewController,WLTableViewCellDelegate {
+     }
 3 设置代理
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
