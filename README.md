@@ -24,8 +24,8 @@ import SweptCell
 3 设置代理
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell")
-            as! TableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell")
+            as! CustomCell
         cell.delegate = self
         return cell
     }
