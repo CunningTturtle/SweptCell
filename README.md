@@ -10,12 +10,14 @@ import SweptCell
 1 继承 WLTableViewCell
 
     class CustomCell: WLTableViewCell {
-     xxx 自己的东西
+         xxx 自己的东西
     }
 
 2 遵守WLTableViewCellDelegate协议
+
      class ViewController: UIViewController,WLTableViewCellDelegate {
      }
+     
 3 设置代理
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
