@@ -1,10 +1,12 @@
-# SweptCell
+# SweptCell 
 SweptCell 一款swift版本的tableViewCell的侧滑删除的控件 有两种侧滑模式 第一种是普通的侧滑 第二种是带有提醒模式的侧滑
 
 ## Requirements
 - Swift 5.0+
 ## Usage
 ```swift
+
+pod 'SweptCell'
 import SweptCell
 
 1 继承 WLTableViewCell
