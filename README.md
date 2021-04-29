@@ -15,7 +15,8 @@ func willLeftSliding() -> [WLSweptItemModel] {
     
     let model = WLSweptItemModel.init()
     model.willClose = { canClose in
-        //当任务结束后 将该值赋值为true 即可关闭 侧滑
+        //当任务结束后 将该值赋值为true 即可关闭 侧滑 
+        //点击的回调
         canClose = true
     }
     model.contentView.backgroundColor = .red
@@ -32,10 +33,12 @@ func willLeftSliding() -> [WLSweptItemModel] {
 
     modelAlert.willClose = { canClose in
         //当任务结束后 将该值赋值为true 即可关闭 侧滑
+        //点击的回调
         canClose = true
     }
     modelAlert.willAlert = { manager in
         //在此处可以修改第二阶段的要展示的UI
+        //点击的回调
         if let subView = manager.subviews.first as? UILabel {
             subView.text = "333"
         }
