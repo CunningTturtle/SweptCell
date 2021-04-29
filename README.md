@@ -6,9 +6,25 @@ SweptCell 一款swift版本的tableViewCell的侧滑删除的控件 有两种侧
 ## Usage
 ```swift
 import SweptCell
-1 继承 TableCell
+
+1 继承 WLTableViewCell
+
+    class CustomCell: WLTableViewCell {
+     xxx 自己的东西
+    }
+
 2 遵守WLTableViewCellDelegate协议
-3 实现 func willLeftSliding() -> [WLSweptItemModel] 方法
+
+3 设置代理
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableCell")
+            as! TableCell
+        cell.delegate = self
+        return cell
+    }
+    
+4 实现 func willLeftSliding() -> [WLSweptItemModel] 方法
 
 //普通侧滑 这里可以返回值是一个数组可以返回多个item
 func willLeftSliding() -> [WLSweptItemModel] {
