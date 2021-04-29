@@ -41,6 +41,8 @@ func willLeftSliding() -> [WLSweptItemModel] {
         //点击的回调
         canClose = true
     }
+    //自定义视图 建议用snp进行约束 
+    model.contentView.addSubview(contentView())
     model.contentView.backgroundColor = .red
     return [model]
 }
@@ -50,7 +52,7 @@ func willLeftSliding() -> [WLSweptItemModel] {
 
     let modelAlert = WLSweptItemModel.init()
     modelAlert.itemType = .alert
-    //与父视图之间的绑定建议用约束绑定
+    //自定义视图 建议用snp进行约束 
     modelAlert.contentView.addSubview(contentView())
 
     modelAlert.willClose = { canClose in
