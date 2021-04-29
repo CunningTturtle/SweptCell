@@ -70,5 +70,5 @@ func willLeftSliding() -> [WLSweptItemModel] {
     return [modelAlert]
 }
     
-
+## 如果需要刷新item数据 请reloadCell 或者 reloadTableView
 ```
